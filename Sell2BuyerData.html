@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Data Input</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        body {
+            background-color: #0e0e0e;
+            font-family: 'Built Titling', sans-serif;
+            margin: 0;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .user-data-container {
+            width: 40%;
+            background-color: #1c1c1c;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+        }
+
+        .user-data-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .user-data-container input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            background-color: #333;
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+        }
+
+        .user-data-container button {
+            width: 100%;
+            padding: 12px;
+            background-color: #fff;
+            color: #f44;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .user-data-container button:hover {
+            background-color: #f44;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="user-data-container">
+        <h2>Enter Buyer’s Details</h2>
+        <input type="text" placeholder="User ID">
+        <p style="text-align: center;">OR</p>
+        <input type="text" placeholder="Name" required>
+        <input type="text" placeholder="Phone" required>
+        <input type="email" placeholder="Email" required>
+        <button>Submit</button>
+    </div>
+
+</body>
+
+</html>
