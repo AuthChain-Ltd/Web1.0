@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - AuthChain</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="verifier.css">
+
+    <style>
+        body {
+            background-color: #0e0e0e;
+            font-family: 'Built Titling', sans-serif;
+            margin: 0;
+            color: #fff;
+        }
+        .btn {
+            background-color: #201f1f;
+        }
+
+        h2, h5 {
+            font-family: 'Built Titling', sans-serif;
+            color: #0a0909;
+        }
+
+        .about-section {
+            padding: 20px 30px;
+            text-align: center;
+            background-color: #1c1c1c;
+        }
+
+        .about-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #f44;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+            color: #ccc;
+        }
+
+        .about-content p {
+            margin-bottom: 20px;
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 10px 10px;
+            text-align: center;
+        }
+        .team-section h2{
+            color: #f44;
+        }
+
+        .team-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .team-member {
+            background-color: #1c1c1c;
+            padding: 20px;
+            border-radius: 10px;
+            width: 250px;
+            text-align: center;
+        }
+
+        .team-member img {
+            width: 100%;
+            border-radius: 10%;
+            margin-bottom: 20px;
+        }
+
+        .team-member h5 {
+            margin-bottom: 10px;
+            color: #f44;
+        }
+
+        .team-member p {
+            color: #ccc;
+        }
+        .footer p{
+            color: #000;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar (Same as other pages) -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="#">
+                <img src="assets/AuthChain.png" alt="AuthChain Logo" class="nav-logo">
+            </a>
+        </div>
+        <div class="nav-middle">
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="contact.html">Contact Us</a>
+            <a class="nav-link" href="about.html" class="active">About Us</a>
+        </div>
+        <div class="nav-right">
+            <a href="Seller.html"><button class="btn btn-custom" id="seller-btn">Seller</button></a>
+            <a href="Buyer.html"><button class="btn btn-custom" id="buyer-btn">Buyer</button></a>
+            <a href="Verifier.html"><button hr class="btn btn-custom" id="verifier-btn">Verifier</button></a>
+            <div class="active-indicator"></div>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <div class="about-section">
+        <h2>About AuthChain</h2>
+        <div class="about-content">
+            <p>AuthChain is a decentralized, blockchain-based system that revolutionizes the way we track and transfer ownership of assets. Our innovative solution ensures the security and transparency of every transaction, creating a verifiable history of ownership for products ranging from smartphones to cars.</p>
+            <p>We are dedicated to providing an immutable, tamper-proof platform that empowers individuals and organizations to seamlessly transfer ownership with trust and confidence. AuthChain is built on cutting-edge blockchain technology, ensuring that all ownership transfers are recorded on a distributed ledger for maximum accountability and security.</p>
+        </div>
+    </div>
+
+    <!-- Team Section -->
+    <div class="team-section">
+        <h2>Our Team</h2>
+        <div class="team-container">
+            <div class="team-member">
+                <img src="assets/TeamMembers/sas.png" alt="Sabbir Ahmed Shameem's Picture">
+                <h5>Sabbir Ahmed Shameem</h5>
+                <p>Founder & CEO</p>
+            </div>
+            <div class="team-member">
+                <img src="assets/TeamMembers/Fahmida Koli.jpg" alt="Fahmida Koli's Picture">
+                <h5>Mst. Fahmida Akter</h5>
+                <p>Head of Research & Strategy</p>
+            </div>
+            <div class="team-member">
+                <img src="assets/TeamMembers/sobhan.jpg" alt="Abdus Sobhan's Picture">
+                <h5>Abdus Sobhan</h5>
+                <p>Market Research Lead</p>
+            </div>
+            <div class="team-member">
+                <img src="assets/TeamMembers/Zim.jpg" alt="Farzana Hoque Zim's Picture">
+                <h5>Farzana Hoque Zim</h5>
+                <p>Business Model Architect</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <img src="assets/AuthChain.png" alt="AuthChain Logo" class="img-fluid">
+                <p>AuthChain is a decentralized blockchain based ownership tracking and transferring system. <br>
+                    Email: support@AuthChain.com <br>
+                    Phone: +88 01300 000000 <br>
+                </p>
+            </div>
+            <div class="footer-middle">
+                <h5>Important Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="whitepapers.html">Whitepapers</a></li>
+                </ul>
+            </div>
+            <div class="footer-third">
+                <h5>Other Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Career</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-right">
+                <h5>Follow Us</h5>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 <a href="#">AuthChain</a> All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
