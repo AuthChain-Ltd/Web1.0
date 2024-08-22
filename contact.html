@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="verifier.css">
+    
+    <style>
+        /* General Styles */
+        body {
+            background-color: #0e0e0e;
+            font-family: 'Built Titling', sans-serif;
+            margin: 0;
+            color: #fff;
+        }
+        .btn {
+            background-color: #201f1f;
+        }
+
+        h2, h5 {
+            font-family: 'Built Titling', sans-serif;
+            color: #fff;
+        }
+
+        .contact-section {
+            padding: 20px 100px;
+        }
+
+        .contact-method {
+            margin-bottom: 40px;
+        }
+
+        .contact-method h5 {
+            color: #f44;
+        }
+
+        .contact-method p {
+            color: #ccc;
+            font-size: 1rem;
+        }
+
+        .support-option {
+            margin-bottom: 30px;
+        }
+
+        .support-option i {
+            font-size: 2rem;
+            color: #f44;
+        }
+
+        .support-option h5 {
+            margin-top: 10px;
+        }
+
+        /* Support Form */
+        .support-form {
+            margin-top: 40px;
+        }
+
+        .support-form input,
+        .support-form textarea,
+        .support-form button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: none;
+        }
+
+        .support-form input,
+        .support-form textarea {
+            background-color: #1c1c1c;
+            color: #fff;
+        }
+
+        .support-form button {
+            background-color: #fff;
+            color: #f44;
+            font-weight: bold;
+        }
+        .footer p{
+            color: #000;
+        }
+        .footer h5{
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar (Same as other pages) -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="#">
+                <img src="assets/AuthChain.png" alt="AuthChain Logo" class="nav-logo">
+            </a>
+        </div>
+        <div class="nav-middle">
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="about.html">About Us</a>
+            <a class="nav-link active" href="contact.html">Contact Us</a>
+        </div>
+        <div class="nav-right">
+            <a href="Seller.html"><button class="btn btn-custom" id="seller-btn">Seller</button></a>
+            <a href="Buyer.html"><button class="btn btn-custom" id="buyer-btn">Buyer</button></a>
+            <a href="Verifier.html"><button hr class="btn btn-custom" id="verifier-btn">Verifier</button></a>
+            <div class="active-indicator"></div>
+        </div>
+    </nav>
+
+    <!-- Contact Us Section -->
+    <div class="contact-section">
+        <h2>Contact Us</h2>
+        <p>We're here to help! Choose one of the support options below to get in touch with our team.</p>
+
+        <!-- Support Options -->
+        <div class="row">
+            <!-- Technical Support -->
+            <div class="col-md-4 support-option">
+                <i class="fas fa-cogs"></i>
+                <h5>Technical Support</h5>
+                <p>For any technical issues with our platform, please reach out to our support team.</p>
+                <p><strong>Email:</strong> techsupport@authchain.com</p>
+                <p><strong>Phone:</strong> +88 01300 111111</p>
+            </div>
+            <!-- Customer Support -->
+            <div class="col-md-4 support-option">
+                <i class="fas fa-headset"></i>
+                <h5>Customer Support</h5>
+                <p>Have any questions or need help with your account? Our customer support is here for you.</p>
+                <p><strong>Email:</strong> support@authchain.com</p>
+                <p><strong>Phone:</strong> +88 01300 222222</p>
+            </div>
+            <!-- Business Inquiries -->
+            <div class="col-md-4 support-option">
+                <i class="fas fa-briefcase"></i>
+                <h5>Business Inquiries</h5>
+                <p>For partnerships or business-related questions, contact our business team.</p>
+                <p><strong>Email:</strong> business@authchain.com</p>
+                <p><strong>Phone:</strong> +88 01300 333333</p>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="support-form">
+            <h5>Send Us a Message</h5>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="4" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <img src="assets/AuthChain.png" alt="AuthChain Logo" class="img-fluid">
+                <p>AuthChain is a decentralized blockchain based ownership tracking and transferring system. <br>
+                    Email: support@AuthChain.com <br>
+                    Phone: +88 01300 000000 <br>
+                </p>
+            </div>
+            <div class="footer-middle">
+                <h5>Important Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="whitepapers.html">Whitepapers</a></li>
+                </ul>
+            </div>
+            <div class="footer-third">
+                <h5>Other Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Career</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-right">
+                <h5>Follow Us</h5>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 <a href="#">AuthChain</a> All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
