@@ -1,0 +1,69 @@
+/* General Styles */
+body {
+    background-color: #0e0e0e;
+    font-family: 'Built Titling', sans-serif;
+    margin: 0;
+}
+
+h2 {
+    font-family: 'Built Titling', sans-serif;
+    color: #fff;
+}
+
+.search-bar {
+    max-width: 300px;
+    background-color: #e0dede;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-family: 'Calibri', sans-serif;
+}
+
+/* Product Card Styles */
+.product-card {
+    background-color: #e0dede;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #000;
+}
+
+.product-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.product-description,
+.product-imei {
+    font-family: 'Calibri', sans-serif;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.product-tags .badge {
+    font-family: 'Calibri', sans-serif;
+    margin-right: 10px;
+    letter-spacing: 1px;
+    align-items: left;
+}
+
+.product-img {
+    max-width: 100px;
+}
+
+.btn-outline-danger {
+    color: #f44;
+    border-color: #f44;
+}
+
+.btn-outline-success {
+    color: #4caf50;
+    border-color: #4caf50;
+}
+
+/* Add Product & Sell Directly Buttons */
+.btn-danger {
+    background-color: red;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+}
