@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Product Details</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="yourProducts.css">
+    <link rel="stylesheet" href="verifier.css">
+    <style>
+        /* General Styles */
+        body {
+            background-color: #0e0e0e;
+            font-family: 'Built Titling', sans-serif;
+            margin: 0;
+        }
+
+        h2 {
+            font-family: 'Built Titling', sans-serif;
+            color: #fff;
+        }
+
+        /* Product Details Card */
+        .product-details-card {
+            background-color: #e0dede;
+            border-radius: 12px;
+            padding: 20px;
+            color: #000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .product-title {
+            font-size: 1.5rem;
+        }
+
+        .btn-black {
+            background-color: #000;
+            color: #f44;
+            border-radius: 5px;
+            padding: 8px 15px;
+        }
+
+        /* Product Info */
+        .product-description {
+            font-family: 'Calibri', sans-serif;
+            color: #333;
+            
+        }
+
+        .product-info p {
+            font-family: 'Calibri', sans-serif;
+            margin-bottom: 5px;
+        }
+
+        /* Owner Details */
+        .btn-outline-danger {
+            padding: 2px 6px;
+            font-size: 0.8rem;
+            
+        }
+
+        /* Product Images */
+        .product-images img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-danger {
+            background-color: red;
+            border-radius: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header and Navigation will be included here -->
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="#">
+                <img src="assets/AuthChain.png" alt="AuthChain Logo" class="nav-logo">
+            </a>
+        </div>
+        <div class="nav-middle">
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="contact.html">Contact Us</a>
+            <a class="nav-link" href="about.html">About Us</a>
+        </div>
+        <div class="nav-right">
+            <a href="Seller.html"><button class="btn-stakeholder active" id="seller-btn">Seller</button></a>
+            <a href="Buyer.html"><button class="btn btn-custom" id="buyer-btn">Buyer</button></a>
+            <a href="Verifier.html"><button class="btn btn-custom" id="verifier-btn">Verifier</button></a>
+            <div class="active-indicator"></div>
+        </div>
+    </nav>
+
+    <!-- Floating Menu (Visible when logged in) -->
+    <div class="floating-menu">
+        <a href="#" class="menu-icon" id="account-icon"><img src="assets/Profile.png" alt="Account"></a>
+        <a href="#" class="menu-icon" id="notifications-icon"><img src="assets/Notifications.png" alt="Notifications"></a>
+        <a href="#" class="menu-icon" id="products-icon"><img src="assets/Products.png" alt="Products"></a>
+        <a href="#" class="menu-icon" id="settings-icon"><img src="assets/Settings.png" alt="Settings"></a>
+    </div>
+
+    <!-- Product Details Section -->
+    <div class="container mt-5">
+        <h2 class="text-white text-center mb-5">Product Details (Seller View)</h2>
+
+        <div class="product-details-card p-4">
+            <div class="d-flex justify-content-between">
+                <h4 class="product-title text-danger">SAMSUNG S24</h4>
+                <div>
+                    <a href=""><button class="btn btn-black text-danger mr-2">Message Buyer</button></a>
+                    <a href="Sell2BuyerData.html"><button class="btn btn-black text-danger">Sell Now</button></a>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <!-- Left: Description and Product Info -->
+                <div class="col-md-6">
+                    <h5 class="font-weight-bold">Description</h5>
+                    <p class="product-description text-black-50">
+                        The Samsung S24 is a cutting-edge smartphone designed for performance and style.
+                        It features an advanced camera system, powerful processing, and a sleek design that sets it
+                        apart.
+                    </p>
+                    <div class="product-info mt-4">
+                        <p class="mb-2"><strong>Model:</strong> SAM-S24-2024</p>
+                        <p class="mb-2"><strong>IMEI:</strong> 123456789012345</p>
+                        <p class="mb-2"><strong>Release Date:</strong> January 2024</p>
+                        <p class="mb-2"><strong>Brand:</strong> Samsung</p>
+                        <p class="mb-2"><strong>Purchased Date:</strong> March 2024</p>
+                        <p class="mb-2"><strong>Last Servicing:</strong> June 2024</p>
+                    </div>
+                </div>
+
+                <!-- Middle: Owner Details -->
+                <div class="col-md-3">
+                    <h5 class="font-weight-bold">Owner Details</h5>
+                    <p class="mb-2"><strong>Name:</strong> John Doe</p>
+                    <p class="mb-2"><strong>Phone Number:</strong> +123 456 789</p>
+                    <p class="mb-2"><strong>Address:</strong> 123 Main Street, New York, USA</p>
+                    <p class="mb-2"><strong>Owner Since:</strong> March 2024</p>
+
+                    <h5 class="font-weight-bold mt-4">Check Past Owners</h5>
+                    <a href="pastOwners.html"><button class="btn btn-danger mt-2">Click Here</button></a>                </div>
+
+                <!-- Right: Product Images -->
+                <div class="col-md-3">
+                    <h5 class="font-weight-bold">Product Images</h5>
+                    <div class="product-images">
+                        <img src="assets/samsung-s24.png" alt="SAMSUNG S24" class="img-fluid mb-2">
+                        <img src="assets/samsung-s24-2.png" alt="SAMSUNG S24" class="img-fluid mb-2">
+                        <img src="assets/samsung-s24-3.png" alt="SAMSUNG S24" class="img-fluid mb-2">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <img src="assets/AuthChain.png" alt="AuthChain Logo" class="img-fluid">
+                <p>AuthChain is a decentralized blockchain based ownership tracking and transferring system. <br>
+                    Email: support@AuthChain.com <br>
+                    Phone: +88 01300 000000 <br>
+                </p>
+            </div>
+            <div class="footer-middle">
+                <h5>Important Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="whitepapers.html">Whitepapers</a></li>
+                </ul>
+            </div>
+            <div class="footer-third">
+                <h5>Other Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Career</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-right">
+                <h5>Follow Us</h5>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 <a href="#">AuthChain</a> All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
