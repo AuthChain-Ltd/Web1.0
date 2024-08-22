@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell Directly</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="verifier.css">
+    
+
+    <style>
+        /* General Styles */
+        body {
+            background-color: #0e0e0e;
+            font-family: 'Built Titling', sans-serif;
+            margin: 0;
+            color: #fff;
+        }
+
+        h2, h5 {
+            font-family: 'Built Titling', sans-serif;
+            color: #fff;
+        }
+
+        .form-section {
+            display: flex;
+            justify-content: space-between;
+            padding: 30px;
+        }
+
+        /* Left Side - Product Details */
+        .product-details {
+            width: 45%;
+            padding-right: 30px;
+        }
+
+        .product-details input,
+        .product-details textarea,
+        .product-details button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: none;
+        }
+
+        .product-details input,
+        .product-details textarea {
+            background-color: #1c1c1c;
+            color: #fff;
+        }
+
+        .product-details button {
+            background-color: #fff;
+            color: #f44;
+        }
+
+        .upload-section h5 {
+            margin-bottom: 10px;
+        }
+
+        /* Right Side - Buyer Details and Database Import */
+        .buyer-details {
+            width: 45%;
+            padding-left: 30px;
+            color: #ccc;
+        }
+
+        .buyer-details input,
+        .buyer-details button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: none;
+            background-color: #1c1c1c;
+            color: #fff;
+        }
+
+        .import-btn {
+            background-color: #fff;
+            color: #f44;
+            font-weight: bold;
+        }
+
+        /* Centered Sell Button */
+        .sell-button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+
+        .sell-button-container button {
+            padding: 10px 30px;
+            background-color: #fff;
+            color: #f44;
+            font-size: 1.4rem;
+            border-radius: 20px;
+            border: none;
+        }
+        .footer p{
+            color: #000;
+        }
+        .footer h5{
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar (Same as other pages) -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="#">
+                <img src="assets/AuthChain.png" alt="AuthChain Logo" class="nav-logo">
+            </a>
+        </div>
+        <div class="nav-middle">
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="contact.html">Contact Us</a>
+            <a class="nav-link" href="about.html">About Us</a>
+        </div>
+        <div class="nav-right">
+            <a href="Seller.html"><button class="btn btn-custom" id="seller-btn">Seller</button></a>
+            <a href="Buyer.html"><button class="btn-stakeholder active" id="buyer-btn">Buyer</button></a>
+            <a href="Verifier.html"><button class="btn btn-custom" id="verifier-btn">Verifier</button></a>
+            <div class="active-indicator"></div>
+        </div>
+    </nav>
+
+    <!-- Form Section -->
+    <div class="form-section">
+        <!-- Left Side - Product Details Form -->
+        <div class="product-details">
+            <h2>Enter Product Details</h2>
+            <input type="text" placeholder="Name" required>
+            <textarea placeholder="Description" rows="3" required></textarea>
+            <input type="text" placeholder="Model" required>
+            <input type="text" placeholder="IMEI" required>
+            <input type="text" placeholder="Brand" required>
+            <input type="date" placeholder="Released On" required>
+            <textarea placeholder="Others (Note)" rows="2"></textarea>
+            <div class="upload-section">
+                <h5>Upload Product Image</h5>
+                <input type="file">
+            </div>
+        </div>
+
+        <!-- Right Side - Buyer Details and Import Option -->
+        <div class="buyer-details">
+            <h2>Or,</h2>
+            <p>Already Have These Information On Database/XL Sheet?</p>
+            <button class="import-btn">Import Now</button>
+            <h2>Enter Buyers Details</h2>
+            <input type="text" placeholder="User ID">
+            <p style="text-align:center;">OR</p>
+            <input type="text" placeholder="Name" required>
+            <input type="text" placeholder="Phone" required>
+            <input type="email" placeholder="Email" required>
+        </div>
+    </div>
+
+    <!-- Centered Sell Product Button -->
+    <div class="sell-button-container">
+       <a href="yourProducts.html"> <button>Sell Product</button></a>
+    </div>
+
+    <!-- Footer (Same as other pages) -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <img src="assets/AuthChain.png" alt="AuthChain Logo" class="img-fluid">
+                <p>AuthChain is a decentralized blockchain based ownership tracking and transferring system. <br>
+                    Email: support@AuthChain.com <br>
+                    Phone: +88 01300 000000 <br>
+                </p>
+            </div>
+            <div class="footer-middle">
+                <h5>Important Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="whitepapers.html">Whitepapers</a></li>
+                </ul>
+            </div>
+            <div class="footer-third">
+                <h5>Other Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Career</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-right">
+                <h5>Follow Us</h5>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 <a href="#">AuthChain</a> All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
