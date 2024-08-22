@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ownership History</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #0e0e0e;
+            font-family: 'Built Titling', sans-serif;
+            color: #fff;
+            margin: 0;
+        }
+
+        h2, h5 {
+            color: #fff;
+        }
+
+        .roadmap-container {
+            padding-top: 5px;
+            padding-bottom: 50px;
+            padding-left: 10px;
+            padding-right: 10px;
+            position: relative;
+        }
+
+        .roadmap-line {
+            position: absolute;
+            left: 50%;
+            width: 2px;
+            background-color: #f00;
+            height: 96.6%;
+            transform: translateX(-50%);
+        }
+
+        .roadmap-item {
+            background-color: #1c1c1c;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 50px;
+            position: relative;
+            width: 45%;
+        }
+
+        .roadmap-item:nth-child(odd) {
+            float: left;
+            clear: right;
+        }
+
+        .roadmap-item:nth-child(even) {
+            float: right;
+            clear: left;
+        }
+
+        .roadmap-item:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            background-color: #f00;
+            border-radius: 50%;
+            left: -10px;
+            border: 3px solid #0e0e0e;
+        }
+
+        .roadmap-item:nth-child(even):before {
+            right: -10px;
+            left: auto;
+        }
+
+        .roadmap-item h2 {
+            margin-bottom: 10px;
+        }
+
+        .roadmap-item p {
+            margin: 0;
+        }
+
+        .roadmap-item-content {
+            padding: 10px;
+        }
+
+        .clear {
+            clear: both;
+        }
+        .footer p{
+            color: #000;
+        }
+        .footer h5{
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar (Same as other pages) -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="#">
+                <img src="assets/AuthChain.png" alt="AuthChain Logo" class="nav-logo">
+            </a>
+        </div>
+        <div class="nav-middle">
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="contact.html">Contact Us</a>
+            <a class="nav-link" href="about.html">About Us</a>
+        </div>
+        <div class="nav-right">
+            <a href="Seller.html"><button class="btn btn-custom" id="seller-btn">Seller</button></a>
+            <a href="Buyer.html"><button class="btn btn-custom" id="buyer-btn">Buyer</button></a>
+            <a href="Verifier.html"><button class="btn btn-custom" id="verifier-btn">Verifier</button></a>
+            <div class="active-indicator"></div>
+        </div>
+    </nav>
+
+    <!-- Ownership History Section -->
+    <div class="roadmap-container">
+        <h2 style="text-align: center;"> Ownership History </h2>
+        <div class="roadmap-line"></div>
+
+        <div class="roadmap-item">
+            <div class="roadmap-item-content">
+                <h2>Presnet Owner</h2>
+                <p>Owner Name: Alice Johnson</p>
+                <p>Purchase Date: 2022-06-01</p>
+                <p>Contact: alice.johnson@example.com</p>
+            </div>
+        </div>
+
+        <div class="roadmap-item">
+            <div class="roadmap-item-content">
+                <h2>Second-Hand Owner</h2>
+                <p>Owner Name: Jane Smith</p>
+                <p>Purchase Date: 2021-01-01</p>
+                <p>Contact: jane.smith@example.com</p>
+            </div>
+        </div>
+
+        <div class="roadmap-item">
+            <div class="roadmap-item-content">
+                <h2>First Buyer</h2>
+                <p>Buyer Name: John Doe</p>
+                <p>Purchase Date: 2020-04-01</p>
+                <p>Contact: john.doe@example.com</p>
+            </div>
+        </div>
+
+        <div class="roadmap-item">
+            <div class="roadmap-item-content">
+                <h2>Showrooms/Shops</h2>
+                <p>Showroom Name: Tech Showroom</p>
+                <p>Location: Main Street</p>
+                <p>Purchase Date: 2020-03-01</p>
+            </div>
+        </div>
+
+        <div class="roadmap-item">
+            <div class="roadmap-item-content">
+                <h2>Retailers</h2>
+                <p>Retailer Name: Best Electronics</p>
+                <p>Location: Downtown City</p>
+                <p>Purchase Date: 2020-02-01</p>
+            </div>
+        </div>
+
+        <div class="roadmap-item">
+            <div class="roadmap-item-content">
+                <h2>Company (Brand) Details</h2>
+                <p>Company Name: XYZ Corporation</p>
+                <p>Product Model: ABC123</p>
+                <p>Initial Release Date: 2020-01-01</p>
+                <p>Product Description: High-quality electronic device...</p>
+            </div>
+        </div>
+
+        <div class="clear"></div>
+    </div>
+</body>
+
+    <!-- Footer (Same as other pages) -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <img src="assets/AuthChain.png" alt="AuthChain Logo" class="img-fluid">
+                <p>AuthChain is a decentralized blockchain-based ownership tracking and transferring system. <br>
+                    Email: support@AuthChain.com <br>
+                    Phone: +88 01300 000000 <br>
+                </p>
+            </div>
+            <div class="footer-middle">
+                <h5>Important Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="whitepapers.html">Whitepapers</a></li>
+                </ul>
+            </div>
+            <div class="footer-third">
+                <h5>Other Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Career</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-right">
+                <h5>Follow Us</h5>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 <a href="#">AuthChain</a> All rights reserved.</p>
+        </div>
+    </footer>
+
+</html>
