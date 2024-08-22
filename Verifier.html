@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verifier Dashboard</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #0e0e0e;
+            font-family: 'Built Titling', sans-serif;
+            margin: 0;
+            color: #fff;
+            letter-spacing: 0.5px;
+        }
+
+        .dashboard {
+            padding: 30px;
+            text-align: center;
+        }
+
+        h2 {
+            font-family: 'Built Titling', sans-serif;
+            color: #fff;
+            margin-bottom: 50px;
+            letter-spacing: 1px;
+        }
+
+        .card-deck {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .card {
+            background-color: #1c1c1c;
+            border-radius: 15px;
+            padding: 30px;
+            width: 280px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card i {
+            font-size: 3rem;
+            color: #f44;
+            margin-bottom: 15px;
+        }
+
+        .card h5 {
+            font-family: 'Built Titling', sans-serif;
+            margin-bottom: 20px;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        .card p {
+            color: #ccc;
+            letter-spacing: 0.5px;
+        }
+        .verify-btn {
+            background-color: #f44;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .verify-btn:hover {
+            background-color: #c33;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .card-deck {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                width: 90%;
+                margin-bottom: 30px;
+            }
+        }
+        .footer p{
+            color: #000;
+        }
+        .footer h5{
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="#">
+                <img src="assets/AuthChain.png" alt="AuthChain Logo" class="nav-logo">
+            </a>
+        </div>
+        <div class="nav-middle">
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="contact.html">Contact Us</a>
+            <a class="nav-link" href="about.html">About Us</a>
+        </div>
+        <div class="nav-right">
+            <a href="Seller.html"><button class="btn btn-custom" id="seller-btn">Seller</button></a>
+            <a href="Buyer.html"><button class="btn btn-custom" id="buyer-btn">Buyer</button></a>
+            <a href="Verifier.html"><button class="btn-stakeholder active" id="verifier-btn">Verifier</button></a>
+        </div>
+    </nav>
+
+    <!-- Verifier Dashboard -->
+    <div class="dashboard">
+        <h2>Verifier Dashboard</h2>
+
+        <div class="card-deck">
+            <div class="card">
+                <i class="fas fa-shield-alt"></i>
+                <h5>Verify Ownership</h5>
+                <p>Confirm the authenticity of ownership details for insurance or loans.</p>
+                <a href="Verify.html"><button class="verify-btn">Verify</button></a>
+            </div>
+            <div class="card">
+                <i class="fas fa-car"></i>
+                <h5>Vehicle Verification</h5>
+                <p>Check vehicle details and validate ownership for loans or police investigations.</p>
+                <a href="Verify.html"><button class="verify-btn">Verify</button></a>            </div>
+            <div class="card">
+                <i class="fas fa-user-check"></i>
+                <h5>Buyer's History</h5>
+                <p>Review the purchase history and background of the buyer before selling.</p>
+                <a href="Verify.html"><button class="verify-btn">Verify</button></a>            </div>
+            <div class="card">
+                <i class="fas fa-file-invoice"></i>
+                <h5>Loan Verification</h5>
+                <p>Verify loan details and ensure product ownership before approval.</p>
+                <a href="Verify.html"><button class="verify-btn">Verify</button></a>            </div>
+            <div class="card">
+                <i class="fas fa-search"></i>
+                <h5>Find Real Owner</h5>
+                <p>Help authorities locate the rightful owner of lost or stolen products.</p>
+                <a href="Verify.html"><button class="verify-btn">Verify</button></a>            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <img src="assets/AuthChain.png" alt="AuthChain Logo" class="img-fluid">
+                <p>AuthChain is a decentralized blockchain based ownership tracking and transferring system. <br>
+                    Email: support@AuthChain.com <br>
+                    Phone: +88 01300 000000 <br>
+                </p>
+            </div>
+            <div class="footer-middle">
+                <h5>Important Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="whitepapers.html">Whitepapers</a></li>
+                </ul>
+            </div>
+            <div class="footer-third">
+                <h5>Other Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Career</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-right">
+                <h5>Follow Us</h5>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 <a href="#">AuthChain</a> All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
