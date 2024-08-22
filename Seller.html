@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Dashboard</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+    
+            background-color: #0e0e0e;
+            color: #fff;
+            font-family: 'Built Titling', sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        h2 {
+            padding: 10px;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #fff;
+        }
+
+        .dashboard {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        .card {
+            width: 30%;
+            background-color: #1c1c1c;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card i {
+            font-size: 3rem;
+            color: #f44;
+            margin-bottom: 20px;
+        }
+
+        .card h5 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .card p {
+            font-size: 1rem;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        .card button {
+            background-color: #f44;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .card button:hover {
+            background-color: #fff;
+            color: #f44;
+        }
+
+        .footer p{
+            color: #000;
+        }
+        .footer h5{
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="#">
+                <img src="assets/AuthChain.png" alt="AuthChain Logo" class="nav-logo">
+            </a>
+        </div>
+        <div class="nav-middle">
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="contact.html">Contact Us</a>
+            <a class="nav-link" href="about.html">About Us</a>
+        </div>
+        <div class="nav-right">
+            <a href="Seller.html"><button class="btn-stakeholder active" id="seller-btn">Seller</button></a>
+            <a href="Buyer.html"><button class="btn btn-custom" id="buyer-btn">Buyer</button></a>
+            <a href="Verifier.html"><button class="btn btn-custom" id="verifier-btn">Verifier</button></a>
+            <div class="active-indicator"></div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Heading -->
+    <h2>Seller Dashboard</h2>
+
+    <!-- Dashboard Cards -->
+    <div class="dashboard">
+        <!-- Direct Sell Card -->
+        <div class="card">
+            <i class="fas fa-tag"></i>
+            <h5>Direct Sell</h5>
+            <p>List your product and find buyers directly through our platform.</p>
+            <a href="sellDirectly.html"><button>Start Selling</button></a>
+        </div>
+
+        <!-- Sell Listed Products Card -->
+        <div class="card">
+            <i class="fas fa-list"></i>
+            <h5>Sell Listed Products</h5>
+            <p>Manage your existing listings and keep track of your sales.</p>
+            <a href="yourProducts.html"><button>View Listings</button></a>
+        </div>
+
+        <!-- Verify Card -->
+        <div class="card">
+            <i class="fas fa-shield-alt"></i>
+            <h5>Verify</h5>
+            <p>Get your products verified for loans, insurance, or ownership.</p>
+            <a href="Verify.html"><button>Verify Product</button></a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <img src="assets/AuthChain.png" alt="AuthChain Logo" class="img-fluid">
+                <p>AuthChain is a decentralized blockchain based ownership tracking and transferring system. <br>
+                    Email: support@AuthChain.com <br>
+                    Phone: +88 01300 000000 <br>
+                </p>
+            </div>
+            <div class="footer-middle">
+                <h5>Important Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="whitepapers.html">Whitepapers</a></li>
+                </ul>
+            </div>
+            <div class="footer-third">
+                <h5>Other Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Career</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-right">
+                <h5>Follow Us</h5>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 <a href="#">AuthChain</a> All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
