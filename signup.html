@@ -1,114 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AuthChain - Home</title>
+    <title>Sign Up - AuthChain</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="styles-signup.css">
-</head>
-<body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="nav-left">
-            <a href="#">
-                <img src="assets/AuthChain.png" alt="Site Logo" class="nav-logo">
-            </a>
-        </div>
-        <div class="nav-middle">
-            <a class="nav-link" href="index.html">Home</a>
-            <a class="nav-link" href="contact.html">Contact Us</a>
-            <a class="nav-link" href="about.html">About Us</a>
-        </div>
-        <div class="nav-right">
-            <a href="Seller.html"><button class="btn btn-custom" id="seller-btn">Seller</button></a>
-            <a href="Buyer.html"><button class="btn btn-custom" id="buyer-btn">Buyer</button></a>
-            <a href="Verifier.html"><button hr class="btn btn-custom" id="verifier-btn">Verifier</button></a>
-            <div class="active-indicator"></div>
-        </div>
-    </nav>
+    <style>
+        body {
+            background-color: #0e0e0e;
+            font-family: 'Built Titling', sans-serif;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
 
-    <!-- Sign Up Form -->
-    <div class="container signup-container mt-5 mb-5">
-        <h2>Create Account</h2>
-        <form action="#" method="POST" enctype="multipart/form-data">
+        .container {
+            margin-top: 50px;
+            max-width: 500px;
+        }
+
+        h2 {
+            color: #fff;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .form-control, .btn {
+            border-radius: 5px;
+            font-family: sans-serif;
+        }
+
+        .btn {
+            background-color: #d9534f;
+            color: #fff;
+            padding: 10px 20px;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background-color: #c9302c;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .country-select {
+            margin-bottom: 20px;
+        }
+
+        .asterisk {
+            color: red;
+        }
+
+        .verification-success {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .verification-success h2 {
+            font-size: 32px;
+            color: #5cb85c;
+        }
+
+        .verification-success i {
+            font-size: 50px;
+            color: #5cb85c;
+            margin-bottom: 20px;
+            animation: success-bounce 1s ease;
+        }
+
+        @keyframes success-bounce {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        #liveCameraPreview {
+            display:none;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        #liveCameraPreview video {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+    </style>
+    <script>
+        function updateCountryCode() {
+            const countrySelect = document.getElementById("countrySelect");
+            const phoneInput = document.getElementById("phoneNumber");
+            const additionalPhoneInput = document.getElementById("additionalPhone");
+
+            const countryCode = countrySelect.value;
+            phoneInput.value = countryCode;
+            additionalPhoneInput.value = countryCode;
+        }
+
+        function startCamera() {
+            const liveCameraPreview = document.getElementById('liveCameraPreview');
+            const videoElement = document.getElementById('liveFaceVideo');
+            const captureButton = document.getElementById('captureButton');
+
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(stream => {
+                    videoElement.srcObject = stream;
+                    videoElement.play();
+                    liveCameraPreview.style.display = 'block';
+
+                    captureButton.addEventListener('click', function () {
+                        const canvas = document.createElement('canvas');
+                        canvas.width = videoElement.videoWidth;
+                        canvas.height = videoElement.videoHeight;
+                        canvas.getContext('2d').drawImage(videoElement, 0, 0);
+
+                        const imgDataUrl = canvas.toDataURL('image/png');
+                        document.getElementById('liveFaceInput').value = imgDataUrl;
+
+                        stream.getTracks().forEach(track => track.stop());
+                        liveCameraPreview.style.display = 'none';
+                    });
+                })
+                .catch(error => {
+                    console.error("Error accessing camera: ", error);
+                });
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Sign Up</h2>
+        <form id="signupForm">
+            <div class="form-group country-select">
+                <label for="countrySelect">Select Country <span class="asterisk">*</span></label>
+                <select class="form-control" id="countrySelect" onchange="updateCountryCode()">
+                    <option value="+1">United States (+1)</option>
+                    <option value="+44">United Kingdom (+44)</option>
+                    <option value="+91">India (+91)</option>
+                    <option value="+880">Bangladesh (+880)</option>
+                    <!-- Add more countries as needed -->
+                </select>
+            </div>
             <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" class="form-control" placeholder="Enter your full name" required>
+                <label for="phoneNumber">Phone Number <span class="asterisk">*</span></label>
+                <input type="text" class="form-control" id="phoneNumber" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password <span class="asterisk">*</span></label>
+                <input type="password" class="form-control" id="password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password <span class="asterisk">*</span></label>
+                <input type="password" class="form-control" id="confirmPassword" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn">Sign Up</button>
+            </div>
+            <div class="form-group text-center">
+                <button class="btn btn-secondary"><i class="fab fa-google"></i> Sign up with Google</button>
+                <button class="btn btn-secondary"><i class="fab fa-apple"></i> Sign up with Apple</button>
+            </div>
+        </form>
+
+        <div id="otpSection" style="display: none;">
+            <h2>OTP Verification</h2>
+            <div class="form-group">
+                <label for="otpCode">Enter OTP <span class="asterisk">*</span></label>
+                <input type="text" class="form-control" id="otpCode" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn">Continue</button>
+            </div>
+        </div>
+
+        <div id="verificationSection" style="display: none;">
+            <h2>Verify Your Account To Use Our Services</h2>
+            <h4> Information should be similar to your NID/Birth Certificate</h4>
+            <div class="form-group">
+                <label for="legalName">Full Name <span class="asterisk">*</span></label>
+                <input type="text" class="form-control" id="legalName" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender <span class="asterisk">*</span></label>
+                <select class="form-control" id="gender" required>
+                    <option value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="address">Permanent Address <span class="asterisk">*</span></label>
+                <input type="text" class="form-control" id="address" required>
+            </div>
+            <div class="form-group">
+                <label for="nid">NID/Birth Certificate Number <span class="asterisk">*</span></label>
+                <input type="text" class="form-control" id="nid" required>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth <span class="asterisk">*</span></label>
+                <input type="date" class="form-control" id="dob" required>
+            </div>
+            <div class="form-group">
+                <label for="additionalPhone">Additional Mobile</label>
+                <input type="text" class="form-control" id="additionalPhone">
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
+                <input type="email" class="form-control" id="email">
             </div>
             <div class="form-group">
-                <label for="mobile">Mobile Number</label>
-                <input type="tel" id="mobile" name="mobile" class="form-control" placeholder="Enter your mobile number" required>
+                <button type="button" class="btn">Next</button>
+            </div>
+        </div>
+
+        <div id="documentUploadSection" style="display: none;">
+            <h2>Upload Documents</h2>
+            <div class="form-group">
+                <label for="nidFront">NID/Birth Certificate (Front Side) <span class="asterisk">*</span></label>
+                <input type="file" class="form-control" id="nidFront" required>
             </div>
             <div class="form-group">
-                <label for="address">Address</label>
-                <input type="text" id="address" name="address" class="form-control" placeholder="Enter your address" required>
+                <label for="nidBack">NID/Birth Certificate (Back Side) <span class="asterisk">*</span></label>
+                <input type="file" class="form-control" id="nidBack" required>
             </div>
             <div class="form-group">
-                <label for="idNumber">ID Number</label>
-                <input type="text" id="idNumber" name="idNumber" class="form-control" placeholder="Enter your ID number" required>
+                <label for="passport">Passport/Driving License (Optional)</label>
+                <input type="file" class="form-control" id="passport">
             </div>
             <div class="form-group">
-                <label for="document">Upload Birth Certificate/NID</label>
-                <input type="file" id="document" name="document" class="form-control-file" required>
+                <label for="liveFacePhoto">Take a live face photo <span class="asterisk">*</span></label>
+                <div id="liveCameraPreview">
+                    <video id="liveFaceVideo"></video>
+                    <button type="button" id="captureButton" class="btn btn-danger">Capture</button>
+                </div>
+                <input type="hidden" id="liveFaceInput" name="liveFacePhoto">
+                <button type="button" class="btn" onclick="startCamera()">Start Camera</button>
             </div>
             <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password" required>
+                <button type="submit" id="submitButton" class="btn">Submit</button>
             </div>
-            <button type="submit" class="btn btn-primary btn-block signup-button">Sign Up</button>
-        </form>
-        <div class="signup-footer mt-3">
-            <span class="additional-options">Already have an account? <a href="#">Sign In</a></span>
+        </div>
+
+        <div id="verificationSuccessSection" style="display: none;">
+            <div class="verification-success">
+                <i class="fas fa-check-circle"></i>
+                <h2>Verification Complete!</h2>
+                <p>Your account has been successfully verified. You will be redirected shortly.</p>
+            </div>
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-left">
-                <img src="assets/AuthChain.png" alt="AuthChain Logo" class="img-fluid">
-                <p>AuthChain is a decentralized blockchain based ownership tracking and transferring system. <br>
-                    Email: support@AuthChain.com <br>
-                    Phone: +88 01300 000000 <br>
-                </p>
-            </div>
-            <div class="footer-middle">
-                <h5>Important Links</h5>
-                <ul class="list-unstyled">
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="terms.html">Terms of Service</a></li>
-                    <li><a href="whitepapers.html">Whitepapers</a></li>
-                </ul>
-            </div>
-            <div class="footer-third">
-                <h5>Other Links</h5>
-                <ul class="list-unstyled">
-                    <li><a href="#">Career</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Support</a></li>
-                    <li><a href="#">FAQs</a></li>
-                </ul>
-            </div>
-            <div class="footer-right">
-                <h5>Follow Us</h5>
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 <a href="#">AuthChain</a> All rights reserved.</p>
-        </div>
-    </footer>
+    <script>
+        document.getElementById("signupForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            document.getElementById("signupForm").style.display = "none";
+            document.getElementById("otpSection").style.display = "block";
+        });
 
-    <script src="script.js"></script>
+        document.getElementById("otpSection").querySelector("button").addEventListener("click", function (event) {
+            event.preventDefault();
+            document.getElementById("otpSection").style.display = "none";
+            document.getElementById("verificationSection").style.display = "block";
+        });
+
+        document.getElementById("verificationSection").querySelector("button").addEventListener("click", function (event) {
+            event.preventDefault();
+            document.getElementById("verificationSection").style.display = "none";
+            document.getElementById("documentUploadSection").style.display = "block";
+        });
+
+        document.getElementById("submitButton").addEventListener("click", function (event) {
+            event.preventDefault();
+            // You can add form submission logic here if needed.
+            document.getElementById("documentUploadSection").style.display = "none";
+            document.getElementById("verificationSuccessSection").style.display = "block";
+
+            setTimeout(function () {
+                // Redirect logic here, for example:
+                window.location.href = "profile.html";
+            }, 3000);
+        });
+    </script>
 </body>
+
 </html>
