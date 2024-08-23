@@ -3,7 +3,7 @@
 .container {
     max-width: 800px;
     margin: 50px auto;
-    text-align: center;
+    
 }
 
 h1 {
@@ -23,7 +23,7 @@ h1 {
 }
 
 .btn {
-    background-color: #9f9c9c;
+    background-color: #1a1919;
     color: #fff;
     border: none;
     padding: 10px 20px;
