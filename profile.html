@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - AuthChain</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">    
+    <link rel="stylesheet" href="verifier.css">    
+
+    <style>
+        body {
+            background-color: #0e0e0e;
+            font-family: 'Built Titling', sans-serif;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navbar and Footer Styles */
+        .navbar, .footer {
+            background-color: #353434;
+            padding: 10px 20px;
+        }
+
+        .navbar-brand, .nav-link, .footer a {
+            color: #fff;
+        }
+
+        .footer {
+            margin-top: 50px;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer p, .footer a {
+            color: #ccc;
+            margin: 0;
+        }
+
+        .footer .social-icons {
+            margin-top: 10px;
+        }
+
+        .footer .social-icons a {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 24px;
+            display: inline-block;
+        }
+
+        /* Profile Page Styles */
+        .container {
+            margin-top: 10px;
+            max-width: 1000px;
+        }
+
+        h2 {
+            color: #fff;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .profile-info {
+            background-color: #1c1c1c;
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .profile-info label {
+            font-weight: bold;
+            color: #ccc;
+        }
+
+        .profile-info p {
+            color: #fff;
+            font-size: 1.1rem;
+        }
+
+        .profile-pic {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-pic img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #d9534f;
+        }
+
+        .profile-pic input[type="file"] {
+            display: none;
+        }
+
+        .profile-pic label {
+            display: inline-block;
+            padding: 10px 30px;
+            background-color: #d9534f;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            text-transform: uppercase;
+        }
+
+        .profile-pic label:hover {
+            background-color: #c9302c;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+
+        .form-group p {
+            padding: 10px;
+            background-color: #2a2a2a;
+            border-radius: 5px;
+        }
+
+        /* Edit Profile Button */
+        .edit-profile-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #5bc0de;
+            color: #fff;
+            border-radius: 5px;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .edit-profile-btn:hover {
+            background-color: #31b0d5;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Simulating retrieving user data from form submission
+            const userData = {
+                legalName: "John Doe",
+                gender: "Male",
+                address: "123 Main Street, Anytown",
+                nid: "1234567890",
+                dob: "1990-01-01",
+                phoneNumber: "+8801234567890",
+                additionalPhone: "+8809876543210",
+                email: "johndoe@example.com",
+                profilePic: "https://via.placeholder.com/150"
+            };
+
+            document.getElementById("legalName").textContent = userData.legalName;
+            document.getElementById("gender").textContent = userData.gender;
+            document.getElementById("address").textContent = userData.address;
+            document.getElementById("nid").textContent = userData.nid;
+            document.getElementById("dob").textContent = userData.dob;
+            document.getElementById("phoneNumber").textContent = userData.phoneNumber;
+            document.getElementById("additionalPhone").textContent = userData.additionalPhone;
+            document.getElementById("email").textContent = userData.email;
+            document.getElementById("profilePic").src = userData.profilePic;
+
+            // Profile picture upload
+            const profilePicInput = document.getElementById('profilePicInput');
+            profilePicInput.addEventListener('change', function (e) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById('profilePic').src = e.target.result;
+                };
+                reader.readAsDataURL(this.files[0]);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <!-- Navigation Bar (Same as other pages) -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="#">
+                <img src="assets/AuthChain.png" alt="AuthChain Logo" class="nav-logo">
+            </a>
+        </div>
+        <div class="nav-middle">
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="contact.html">Contact Us</a>
+            <a class="nav-link" href="about.html">About Us</a>
+        </div>
+        <div class="nav-right">
+            <a href="Seller.html"><button class="btn btn-custom" id="seller-btn">Seller</button></a>
+            <a href="Buyer.html"><button class="btn btn-custom" id="buyer-btn">Buyer</button></a>
+            <a href="Verifier.html"><button class="btn btn-custom" id="verifier-btn">Verifier</button></a>
+            <div class="active-indicator"></div>
+        </div>
+    </nav>
+
+    <!-- Floating Menu (Visible when logged in) -->
+<div class="floating-menu">
+    <a href="#" class="menu-icon" id="account-icon"><img src="assets/Profile.png" alt="Account"></a>
+    <a href="#" class="menu-icon" id="notifications-icon"><img src="assets/Notifications.png" alt="Notifications"></a>
+    <a href="#" class="menu-icon" id="products-icon"><img src="assets/Products.png" alt="Products"></a>
+    <a href="#" class="menu-icon" id="settings-icon"><img src="assets/Settings.png" alt="Settings"></a>
+</div>
+
+    <!-- Profile Container -->
+    <div class="container">
+        <h2>Your Profile</h2>
+        <div class="profile-info">
+            <div class="profile-pic">
+                <img id="profilePic" src="" alt="Profile Picture">
+                <input type="file" id="profilePicInput" accept="image/*">
+                <label for="profilePicInput">Change Profile Picture</label>
+            </div>
+            <div class="form-group">
+                <label>Legal Name:</label>
+                <p id="legalName"></p>
+            </div>
+            <div class="form-group">
+                <label>Gender:</label>
+                <p id="gender"></p>
+            </div>
+            <div class="form-group">
+                <label>Address:</label>
+                <p id="address"></p>
+            </div>
+            <div class="form-group">
+                <label>NID/Birth Certificate Number:</label>
+                <p id="nid"></p>
+            </div>
+            <div class="form-group">
+                <label>Date of Birth:</label>
+                <p id="dob"></p>
+            </div>
+            <div class="form-group">
+                <label>Phone Number:</label>
+                <p id="phoneNumber"></p>
+            </div>
+            <div class="form-group">
+                <label>Additional Mobile:</label>
+                <p id="additionalPhone"></p>
+            </div>
+            <div class="form-group">
+                <label>Email:</label>
+                <p id="email"></p>
+            </div>
+            <a href="#" class="edit-profile-btn">Edit Profile</a>
+        </div>
+    </div>
+
+    <!-- Footer (Same as other pages) -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <img src="assets/AuthChain.png" alt="AuthChain Logo" class="img-fluid">
+                <p>AuthChain is a decentralized blockchain-based ownership tracking and transferring system. <br>
+                    Email: support@AuthChain.com <br>
+                    Phone: +88 01300 000000 <br>
+                </p>
+            </div>
+            <div class="footer-middle">
+                <h5>Important Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="whitepapers.html">Whitepapers</a></li>
+                </ul>
+            </div>
+            <div class="footer-third">
+                <h5>Other Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Career</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-right">
+                <h5>Follow Us</h5>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 <a href="#">AuthChain</a> All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
