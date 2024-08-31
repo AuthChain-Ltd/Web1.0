@@ -12,8 +12,7 @@ AuthChain is a blockchain-based platform designed to securely transfer and track
 
 Access the live website here:
 
-![AuthChain Website QR Code](https://ibb.co/s15131P) 
-[Visit AuthChain Website](https://authchain-demo.netlify.app/)
+[CLICK HERE](https://authchain.CO)
 
 ## Key Features
 
